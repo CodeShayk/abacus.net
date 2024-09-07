@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1CE4C8AD-95A2-47C6-9BD4-B74489F19180}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abacus", "src\Abacus\Abacus.csproj", "{27497BC2-CEEC-4E41-94C3-F34B766EF559}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{46374D3A-9676-43EE-AC28-8F526FC999A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abacus.Tests", "test\Abacus.Tests\Abacus.Tests.csproj", "{58A815EE-64AD-4DF0-BBC7-6129057B5857}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{0E4BFF47-6313-4986-9D5F-1B9371C70C61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{D773D7AB-E024-4847-928A-0C5350E46E42}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\Build-Master.yml = .github\workflows\Build-Master.yml
+		.github\workflows\CI-Build.yml = .github\workflows\CI-Build.yml
+		.github\workflows\codeql.yml = .github\workflows\codeql.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{AB71176A-106F-48FB-A68C-4ECC4B352803}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		GitVersion.yml = GitVersion.yml
+		LICENSE = LICENSE
+		README.md = README.md
+		_config.yml = _config.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27497BC2-CEEC-4E41-94C3-F34B766EF559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27497BC2-CEEC-4E41-94C3-F34B766EF559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27497BC2-CEEC-4E41-94C3-F34B766EF559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27497BC2-CEEC-4E41-94C3-F34B766EF559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A815EE-64AD-4DF0-BBC7-6129057B5857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A815EE-64AD-4DF0-BBC7-6129057B5857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A815EE-64AD-4DF0-BBC7-6129057B5857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A815EE-64AD-4DF0-BBC7-6129057B5857}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{27497BC2-CEEC-4E41-94C3-F34B766EF559} = {1CE4C8AD-95A2-47C6-9BD4-B74489F19180}
+		{58A815EE-64AD-4DF0-BBC7-6129057B5857} = {46374D3A-9676-43EE-AC28-8F526FC999A6}
+		{D773D7AB-E024-4847-928A-0C5350E46E42} = {0E4BFF47-6313-4986-9D5F-1B9371C70C61}
+		{AB71176A-106F-48FB-A68C-4ECC4B352803} = {0E4BFF47-6313-4986-9D5F-1B9371C70C61}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE293EA1-24BE-4270-B2B2-42846CA6D169}
+	EndGlobalSection
+EndGlobal
