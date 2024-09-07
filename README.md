@@ -14,5 +14,5 @@ Simple Workflow framework in .Net
 - Sequences of Tasks could be configured with multiple `transitions` with triggers driving different levels of branching.
 - Tasks could be `triggered` by `outcomes` of previous task or an `action` on the workflow associated entity.
 ### Example Workflow
-- Coming soon
+![Abscus.Example](images/abscus.example.png)
 
