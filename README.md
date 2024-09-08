@@ -10,7 +10,7 @@ Simple Workflow framework in .Net
 ### Concept
 - `Workflow Template` defines a sequence of tasks linked to an action on entity of interest.
 - `Task` is an unit of work that needs to be completed and can have an outcome associated upon completion.
-- `Workflow Instance` is actual execution of workflow template triggered by an action on the instance of associated entity. Instance persists the current state of the workflow for the entity instance.
+- `Workflow Instance` is actual execution of workflow template triggered by an event on the instance of associated entity. Instance persists the current state of the workflow for the entity instance.
 - Sequences of Tasks could be configured as multiple `transitions` with triggers driving transitions at different levels of branching.
 - Tasks could be `triggered` by an `outcome` of previous task or a `domain event` on the workflow associated entity.
 
@@ -18,4 +18,4 @@ Simple Workflow framework in .Net
 ![Abscus.Example](images/abscus.example.png)
 
 ### Implementation
-For implementation - Please visit wiki pages for details.
+- Please visit wiki pages for details.
