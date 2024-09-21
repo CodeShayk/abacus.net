@@ -1,4 +1,4 @@
-# <img src="https://github.com/NinjaRocks/abacus.net/blob/master/images/ninja-icon-16.png" alt="ninja" style="width:30px;"/> Abacus v1.0.0
+# <img src="https://github.com/CodeShayk/abacus.net/blob/master/images/ninja-icon-16.png" alt="ninja" style="width:30px;"/> Abacus v1.0.0
 [![NuGet version](https://badge.fury.io/nu/abacus.net.svg)](https://badge.fury.io/nu/abacus.net) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/NinjaRocks/abacus.net/blob/master/License.md) [![build-master](https://github.com/NinjaRocks/abacus.net/actions/workflows/Build-Master.yml/badge.svg)](https://github.com/NinjaRocks/abacus.net/actions/workflows/Build-Master.yml) [![GitHub Release](https://img.shields.io/github/v/release/ninjarocks/abacus.net?logo=github&sort=semver)](https://github.com/ninjarocks/abacus.net/releases/latest)
 [![CodeQL](https://github.com/NinjaRocks/abacus.net/actions/workflows/codeql.yml/badge.svg)](https://github.com/NinjaRocks/abacus.net/actions/workflows/codeql.yml) [![.Net](https://img.shields.io/badge/.Net-8.0-blue)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
