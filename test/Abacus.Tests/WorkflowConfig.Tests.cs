@@ -13,21 +13,58 @@ namespace Abacus.Tests
         [SetUp]
         public void Setup()
         {
-            leadWorkflow = CreateWorkflow.For<Lead, LeadCreated>("LeadWorkflow")
-                            .Map<CreateOpportunity>((root) => root
-                                .Map<PassThrough, ArrangeAppointment>((appointment) => appointment
-                                    .Map<LeadNotInterested, RemoveOpportunity>()
-                                    .Map<LeadInterested, SellProduct>((sellproduct) => sellproduct
-                                            .Map<LeadNotPurchased, RemoveOpportunity>()
-                                            .Map<LeadPurchased, CreateCustomer>()
-                                     )
-                                 )
-                             );
         }
 
         [Test]
-        public void Test1()
+        public void TestConfigWithMapExtensions()
         {
+            leadWorkflow = CreateWorkflow.For<Lead, LeadCreated>("LeadWorkflow")
+                           .StartWith<CreateOpportunity>((root) => root
+                               .Map<PassThrough, ArrangeAppointment>((appointment) => appointment
+                                   .Map<LeadNotInterested, RemoveOpportunity>()
+                                   .Map<LeadInterested, SellProduct>((sellproduct) => sellproduct
+                                           .Map<LeadNotPurchased, RemoveOpportunity>()
+                                           .Map<LeadPurchased, CreateCustomer>()
+                                    )
+                                )
+                            );
+
+            //need to assert on config
+            Assert.IsNotNull(leadWorkflow);
+        }
+
+        [Test]
+        public void TestConfigWithCreateTaskExtensions()
+        {
+            leadWorkflow = CreateWorkflow.For<Lead, LeadCreated>("LeadWorkflow")
+                           .StartWith<CreateOpportunity>((root) => root
+                               .CreateTask<ArrangeAppointment>(With.NoTrigger(), (appointment) => appointment
+                                   .CreateTask<RemoveOpportunity>(With.Trigger<LeadNotInterested>())
+                                   .CreateTask<SellProduct>(With.Trigger<LeadInterested>(), (sellproduct) => sellproduct
+                                           .CreateTask<RemoveOpportunity>(With.Trigger<LeadNotPurchased>())
+                                           .CreateTask<CreateCustomer>(With.Trigger<LeadPurchased>())
+                                    )
+                                )
+                            );
+
+            //need to assert on config
+            Assert.IsNotNull(leadWorkflow);
+        }
+
+        [Test]
+        public void TestConfigWithCreateTaskCompletionExtensions()
+        {
+            leadWorkflow = CreateWorkflow.For<Lead, LeadCreated>("LeadWorkflow")
+                          .StartWith<CreateOpportunity>((root) => root
+                              .CreateTask<ArrangeAppointment>(With.NoTrigger(), (appointment) => appointment
+                                  .CreateTask<RemoveOpportunity>(With.Trigger<LeadNotInterested>())
+                                  .CreateTask<SellProduct>(With.Trigger<LeadInterested>(), (sellproduct) => sellproduct
+                                          .CreateTask<RemoveOpportunity>(With.Trigger<LeadNotPurchased>())
+                                          .CreateTask<CreateCustomer>(With.Trigger<LeadPurchased>())
+                                   )
+                               )
+                           );
+
             //need to assert on config
             Assert.IsNotNull(leadWorkflow);
         }

@@ -5,4 +5,10 @@ namespace Abacus.Core
         where TOutcomeType : IOutcomeType
     {
     }
+
+    public interface ITaskTrigger<in TTask> : ITrigger
+        where TTask : ITaskType, new()
+    {
+        IOutcomeType Outcome { get; set; }
+    }
 }

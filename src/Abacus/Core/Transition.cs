@@ -5,9 +5,16 @@ namespace Abacus.Core
     /// </summary>
     /// <typeparam name="TTask"></typeparam>
     public class Transition<TTrigger, TTask> : ITransition
-        where TTask : ITaskType
-        where TTrigger : ITrigger
+        where TTask : ITaskType, new()
+        where TTrigger : ITrigger, new()
     {
+        public Transition()
+        {
+            Trigger = new TTrigger();
+            Task = new TTask();
+            Transitions = new List<ITransition>();
+        }
+
         public ITaskType Parent { get; set; }
         public ITrigger Trigger { get; set; }
         public ITaskType Task { get; set; }
@@ -15,8 +22,14 @@ namespace Abacus.Core
     }
 
     public class Transition<TTask> : ITransition
-       where TTask : ITaskType
+       where TTask : ITaskType, new()
     {
+        public Transition()
+        {
+            Task = new TTask();
+            Transitions = new List<ITransition>();
+        }
+
         public ITaskType Parent { get; set; }
         public ITrigger Trigger { get; set; }
         public ITaskType Task { get; set; }
